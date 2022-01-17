@@ -4,12 +4,12 @@ import json
 import pathlib
 
 # local module imports
-from ..settings import simulation as sim, operating_conditions as op_con, \
+from pemfc.settings import simulation as sim, operating_conditions as op_con, \
     output as out, geometry as geom, physical_properties as phy_prop
-from ..src import species
-from ..src import global_functions as gf
+from pemfc.src import species
+from pemfc.src import global_functions as gf
 
-from .entry_value import EntryValue
+from gui.entry_value import EntryValue
 
 # nodes = sim.elements + 1
 

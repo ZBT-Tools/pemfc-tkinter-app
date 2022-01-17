@@ -5,13 +5,14 @@ import os
 import sys
 import json
 
-# local imports
-from pemfc.gui import frame
-from pemfc.gui import input
-from pemfc.gui import data_transfer
-# from pemfc.gui import icon
 from pemfc import main_app
 from pemfc.data import input_dicts
+
+# local imports
+from gui import frame
+from gui import input
+from gui import data_transfer
+
 
 
 class NotebookApp:
