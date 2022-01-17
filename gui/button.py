@@ -9,6 +9,9 @@ from . import data_transfer
 
 class ButtonFactory:
 
+    def __init__(self):
+        pass
+
     @staticmethod
     def create(frame, **kwargs):
         button_type = kwargs.pop('type', None)
