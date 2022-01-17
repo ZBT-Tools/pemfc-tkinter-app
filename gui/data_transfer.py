@@ -1,17 +1,6 @@
-# global module imports
-import os
-import json
-import pathlib
-
-# local module imports
-from pemfc.settings import simulation as sim, operating_conditions as op_con, \
-    output as out, geometry as geom, physical_properties as phy_prop
-from pemfc.src import species
 from pemfc.src import global_functions as gf
 
 from gui.entry_value import EntryValue
-
-# nodes = sim.elements + 1
 
 
 def gen_dict_extract(key, var):
@@ -54,10 +43,6 @@ def get_dict_entry(name_list, source_dict):
 
 
 def gui_to_sim_transfer(source_dict, target_dict):
-    # loop through tab frames of gui notebook
-    # for ki, vi in gui_values.items():
-    #     for kj, vj in vi.items():
-    #         print(kj, vj, '\n')
 
     # get only widgets with sim_names
     name_lists = []
