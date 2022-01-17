@@ -6,4 +6,4 @@ dependencies:
         - scipy
         - matplotlib
         - pip:
-                - git+https://github.com/ZBT-Tools/pemfc-core.git@master#egg=pemfc-core
+                - git+https://github.com/ZBT-Tools/pemfc-core.git@master#egg=pemfc
