@@ -9,9 +9,9 @@ from pemfc import main_app
 from pemfc.data import input_dicts
 
 # local imports
-from src import frame
-from src import input
-from src import data_transfer
+from pemfc_gui import frame
+from pemfc_gui import input
+from pemfc_gui import data_transfer
 
 
 

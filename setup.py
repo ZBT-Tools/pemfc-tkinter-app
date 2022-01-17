@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name='pemfc_tkinter',
+    name='pemfc_gui',
     version="0.0.1",
     author="Lukas Feierabend",
     author_email="lukas.feierabend@gmail.com",
