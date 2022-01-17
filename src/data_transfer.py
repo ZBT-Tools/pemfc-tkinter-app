@@ -1,6 +1,6 @@
 from pemfc.src import global_functions as gf
 
-from gui.entry_value import EntryValue
+from src.entry_value import EntryValue
 
 
 def gen_dict_extract(key, var):
