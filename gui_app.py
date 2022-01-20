@@ -14,7 +14,6 @@ from pemfc_gui import input
 from pemfc_gui import data_transfer
 
 
-
 class NotebookApp:
     def __init__(self, master, main_frame_dicts=None, **kwargs):
         self.notebook = ttk.Notebook(master)

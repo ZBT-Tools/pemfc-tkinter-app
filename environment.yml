@@ -1,6 +1,6 @@
 name: gui_app
 dependencies:
-        - python=3.9.7
+        - python>=3.9.7
         - pip
         - numpy
         - scipy
