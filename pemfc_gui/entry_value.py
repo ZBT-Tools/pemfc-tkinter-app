@@ -1,8 +1,7 @@
 import os
 import sys
 
-main_name=sys.argv[0]
-
+main_name = sys.argv[0]
 if 'gui_app.py' in main_name:
     from tkinter.messagebox import showerror
 
