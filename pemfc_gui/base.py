@@ -1,6 +1,5 @@
 # global imports
 from abc import ABC
-from tkinter import Grid
 import copy
 
 # local imports
@@ -14,8 +13,7 @@ class Base(ABC):
 
     REMOVE_ARGS = ['row', 'column', 'grid_location', 'columnspan',
                    'rowspan', 'sticky', 'sim_name', 'dtype', 'padx', 'pady',
-                   'width', 'weights', 'size_label', 'size_unit', 'specifier',
-                   'types']
+                   'width', 'weights', 'size_label', 'size_unit', 'specifier']
 
     def __init__(self, master, name, **kwargs):
         if hasattr(master, 'name'):

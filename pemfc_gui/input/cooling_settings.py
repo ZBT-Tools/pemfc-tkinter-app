@@ -11,8 +11,9 @@ cool_circuit = \
                            [4, 0], [4, 1], [4, 2],
                            [5, 0], [5, 1], [5, 2],
                            [6, 0], [6, 1], [6, 2],
-                           [7, 0], [7, 1], [7, 2]]],
-                 'args2': [1, 2, 3, 4, 5, 6, 7]}}
+                           [7, 0], [7, 1], [7, 2],
+                           [8, 0], [8, 1], [8, 2]]]}}
+                 # 'args2': [1, 2, 3, 4, 5, 6, 7]}}
 
 cool_channel_length = \
     {'label': 'Coolant Channel Length:', 'value': 0.4,
@@ -46,6 +47,7 @@ cool_bend_pressure_loss_coefficient = \
 cool_flow_end_cells = \
     {'label': 'Activate Cooling Flow at End Plates:', 'value': False,
      'sim_name': ['temperature_system', 'cool_ch_bc'],
+     'specifier': 'disabled_cooling',
      'sticky': ['NW', 'NWE'], 'type': 'CheckButtonSet'}
 
 channel_flow_direction = \

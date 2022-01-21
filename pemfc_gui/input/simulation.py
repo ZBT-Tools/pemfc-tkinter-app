@@ -37,8 +37,9 @@ main_numerical_settings_frame_dict = \
      'size_label': 'xl', 'size_unit': 's', 'font': 'Arial 10', 'sticky': 'WEN'}
 # , 'highlightbackground': 'grey', 'highlightthickness': 1}
 
+
 anode_label = {'label': 'Anode', 'row': 1, 'column': 1,
-                        'type': 'Label', 'sticky': 'WENS'}
+               'type': 'Label', 'sticky': 'WENS'}
 
 cathode_label = \
     {'label': 'Cathode', 'row': 1, 'column': 2,

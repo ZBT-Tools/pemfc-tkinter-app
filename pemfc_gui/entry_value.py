@@ -1,4 +1,3 @@
-import os
 import sys
 
 main_name = sys.argv[0]

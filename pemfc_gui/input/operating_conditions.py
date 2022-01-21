@@ -110,8 +110,7 @@ coolant_control = \
      'type': 'ComboboxSet', 'specifier': 'dropdown_activate',
      'command': {'function': 'show_connected_widgets',
                  'args': [[[[[1, 0]], [[2, 0]]],
-                           [[[2, 0]], [[1, 0]]]]],
-                 'args2': [1, 2]}
+                           [[[2, 0]], [[1, 0]]]]]}
      }
 
 coolant_mass_flow = \

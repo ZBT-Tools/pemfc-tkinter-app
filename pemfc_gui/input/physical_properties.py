@@ -15,28 +15,28 @@ through_plane_label_2 = {'label': 'tp', 'row': 2, 'column': 4, 'pady': 0,
                          'type': 'Label', 'sticky': 'WENS'}
 electrical_conductivity_bpp = \
     {'label': 'BPP Electrical Conductivity:',
-     'number': 4, 'value': 6e4, 'width': 5, 'types': 'multiinput',
+     'number': 4, 'value': 6e4, 'width': 5,
      'sim_name': [['anode', 'electrical_conductivity_bpp', [0, 1]],
                   ['cathode', 'electrical_conductivity_bpp', [2, 3]]],
      'dtype': 'float', 'dimensions': 'S/m', 'type': 'EntrySet'}
 
 electrical_conductivity_gde = \
     {'label': 'GDE Electrical Conductivity:',
-     'number': 4, 'value': 500.0, 'width': 5, 'types': 'multiinput',
+     'number': 4, 'value': 500.0, 'width': 5,
      'sim_name': [['anode', 'electrical_conductivity_gde', [0, 1]],
                   ['cathode', 'electrical_conductivity_gde', [2, 3]]],
      'dtype': 'float', 'dimensions': 'S/m', 'type': 'EntrySet'}
 
 thermal_conductivity_bpp = \
-    {'label': 'BPP Thermal Conductivity:', 'types': 'multiinput',
+    {'label': 'BPP Thermal Conductivity:',
      'value': [[100.0, 100.0], [100.0, 100.0]], 'width': 5,
      'sim_name': [['anode', 'thermal_conductivity_bpp', [0, 1]],
                   ['cathode', 'thermal_conductivity_bpp', [2, 3]]],
      'dtype': 'float', 'dimensions': 'W/(m K)', 'type': 'EntrySet'}
 
 thermal_conductivity_gde = \
-    {'label': 'GDE Thermal Conductivity:', 'types': 'multiinput',
-     'value': [[1.0, 2.0], [3.0, 4.0]], 'width': 5,
+    {'label': 'GDE Thermal Conductivity:',
+     'value': [[1.0, 1.0], [1.0, 1.0]], 'width': 5,
      'sim_name': [['anode', 'thermal_conductivity_gde', [0, 1]],
                   ['cathode', 'thermal_conductivity_gde', [2, 3]]],
      'dtype': 'float', 'dimensions': 'W/(m K)', 'type': 'EntrySet'}
@@ -145,7 +145,7 @@ through_plane_label_3 = {'label': 'tp', 'row': 2, 'column': 2, 'pady': 0,
                          'type': 'Label', 'sticky': 'WENS'}
 thermal_conductivity_mem = \
     {'label': 'Membrane Thermal Conductivity:',
-     'value': [[0.26, 0.26]], 'types': 'multiinput',
+     'value': [[0.26, 0.26]],
      #'width': 11, 'columnspan': [1, 2, 2, 1],
      'sim_name': [['membrane', 'thermal_conductivity', [0, 1]]],
      'dtype': 'float', 'dimensions': 'W/(m K)', 'type': 'EntrySet'}

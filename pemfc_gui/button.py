@@ -4,7 +4,6 @@ from tkinter import filedialog
 
 # local imports
 from . import base
-from . import data_transfer
 
 
 class ButtonFactory:
