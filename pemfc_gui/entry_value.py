@@ -1,11 +1,7 @@
 import os
-import __main__ as main
 import sys
 
 main_name=sys.argv[0]
-
-
-
 
 if 'gui_app.py' in main_name:
     from tkinter.messagebox import showerror
@@ -38,7 +34,6 @@ class EntryValue:
 
     def __set__(self, instance, value):
         self._value = value
-
 
 
 if 'gui_app.py' in main_name:
