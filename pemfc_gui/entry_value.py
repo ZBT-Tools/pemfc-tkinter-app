@@ -1,7 +1,13 @@
 import os
 import __main__ as main
-main_name = os.path.basename(main.__file__)
-if main_name == 'gui_app.py':
+import sys
+
+main_name=sys.argv[0]
+
+
+
+
+if 'gui_app.py' in main_name:
     from tkinter.messagebox import showerror
 
 
@@ -34,7 +40,8 @@ class EntryValue:
         self._value = value
 
 
-if main_name == 'gui_app.py':
+
+if 'gui_app.py' in main_name:
 
     class EntryValueFactory:
         def create(self, value, dtype, widget_set):
