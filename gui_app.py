@@ -92,6 +92,10 @@ class NotebookApp:
 
     def get_settings(self):
         values = self.get_values()
+
+        input_dicts.sim_dict['output']['save_plot'] = True
+        input_dicts.sim_dict['output']['save_csv'] = True
+
         settings, name_lists = \
             data_transfer.gui_to_sim_transfer(values, input_dicts.sim_dict)
         return settings
