@@ -63,6 +63,14 @@ dry_gas_composition_dict = \
            'molar_fraction']],
      'dtype': 'float', 'dimensions': '-', 'type': 'EntrySet'}
 
+stoichiometry = \
+    {'label': 'Stoichiometry:', 'number': 2, 'value': 2,
+     'width': 11, 'columnspan': [1, 2, 2, 1],
+     'sim_name':
+         [['anode', 'stoichiometry'],
+          ['cathode', 'stoichiometry']],
+     'dtype': 'float', 'dimensions': '-', 'type': 'EntrySet'}
+
 relative_humidity = \
     {'label': 'Relative Humidity:', 'number': 2, 'value': 0.5,
      'width': 11, 'columnspan': [1, 2, 2, 1],
@@ -98,6 +106,7 @@ gas_frame_dict = \
          nitrogen_label_2,
          dry_gas_composition_dict,
          relative_humidity,
+         stoichiometry,
          gas_inlet_temperature,
          gas_outlet_pressure], 'size_label': 'l', 'size_unit': 's',
      'highlightbackground': 'grey', 'highlightthickness': 1}
