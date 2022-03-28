@@ -37,7 +37,8 @@ electrochem_frame_dict = \
                       current_density,
                       average_cell_voltage],
      'size_label': 'l', 'size_unit': 'm',
-     'highlightbackground': 'grey', 'highlightthickness': 1}
+     # 'highlightbackground': 'grey', 'highlightthickness': 1
+     }
 
 anode_label = {'label': 'Anode', 'row': 1, 'column': 1, 'columnspan': 2,
                'pady': 0, 'type': 'Label', 'sticky': 'WENS'}
@@ -109,7 +110,8 @@ gas_frame_dict = \
          stoichiometry,
          gas_inlet_temperature,
          gas_outlet_pressure], 'size_label': 'l', 'size_unit': 's',
-     'highlightbackground': 'grey', 'highlightthickness': 1}
+     # 'highlightbackground': 'grey', 'highlightthickness': 1
+     }
 
 coolant_control = \
     {'label': 'Coolant Control:', 'number': 1, 'width': 25,
@@ -151,7 +153,8 @@ coolant_control_frame = \
      'widget_dicts': [coolant_control,
                       coolant_temp_diff_frame,
                       coolant_mass_flow_frame],
-     'highlightbackground': 'grey', 'highlightthickness': 1}
+     # 'highlightbackground': 'grey', 'highlightthickness': 1
+     }
 
 coolant_inlet_temperature = \
     {'label': 'Coolant Inlet Temperature:', 'number': 1, 'value': 343.15,
@@ -193,14 +196,16 @@ cooling_frame_dict = \
          endplate_heat_flux,
          convection_coefficient_environment,
          ambient_temperature],
-     'highlightbackground': 'grey', 'highlightthickness': 1}
+     # 'highlightbackground': 'grey', 'highlightthickness': 1
+     }
 
 operating_frame_dict = \
     {'title': 'Operating Conditions', 'show_title': False,
      'font': 'Arial 10 bold', 'sticky': 'WEN',
      'widget_dicts': [electrochem_frame_dict, gas_frame_dict,
                       cooling_frame_dict],
-     'highlightbackground': 'grey', 'highlightthickness': 1}
+     # 'highlightbackground': 'grey', 'highlightthickness': 1
+     }
 
 tab_dict = \
     {'title': 'Operating Conditions', 'show_title': False,

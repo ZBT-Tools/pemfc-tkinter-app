@@ -65,7 +65,8 @@ cool_frame_dict = \
                       cool_bend_pressure_loss_coefficient,
                       channel_flow_direction,
                       cool_flow_end_cells],
-     'highlightbackground': 'grey', 'highlightthickness': 1}
+     # 'highlightbackground': 'grey', 'highlightthickness': 1
+     }
 
 tab_dict = {'title': 'Cooling', 'show_title': False,
             'sub_frame_dicts': [cool_frame_dict]}

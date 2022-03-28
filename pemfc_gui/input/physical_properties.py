@@ -266,7 +266,8 @@ frame_dict = \
                          membrane_frame_dict,
                          electrochemistry_frame_dict,
                          coolant_properties_frame_dict],
-     'highlightbackground': 'grey', 'highlightthickness': 1}
+     # 'highlightbackground': 'grey', 'highlightthickness': 1
+     }
 
 tab_dict = {'title': 'Physical Properties', 'show_title': False,
             'sub_frame_dicts': [frame_dict]}

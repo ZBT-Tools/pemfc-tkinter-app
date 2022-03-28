@@ -1,3 +1,6 @@
+empty_row = {'label': ' ',  'font': 'Arial 1',  # 'row': 1, 'column': 1,
+             'type': 'Label', 'sticky': 'WENS'}
+
 channel_discretization = \
     {'label': 'Channel Discretization:', 'value': 10,
      'sim_name': ['simulation', 'elements'], 'dtype': 'int', 'type': 'EntrySet'}
@@ -33,7 +36,8 @@ main_numerical_settings_frame_dict = \
                       convergence_criteria,
                       minimum_iteration,
                       maximum_iteration,
-                      underrelaxation_factor],
+                      underrelaxation_factor,
+                      empty_row],
      'size_label': 'xl', 'size_unit': 's', 'font': 'Arial 10', 'sticky': 'WEN'}
 # , 'highlightbackground': 'grey', 'highlightthickness': 1}
 
@@ -83,14 +87,20 @@ underrelaxation_factor_flow = \
      'sticky': ['NW', 'NWE'], 'dimensions': '-',
      'dtype': 'float', 'type': 'EntrySet'}
 
+flow_numerical_settings_label = \
+    {'label': 'Flow Circuit Algorithm',
+     'font': 'Arial 10 bold', 'type': 'Label', 'sticky': 'WNS'}
+
 flow_numerical_settings_frame_dict = \
-    {'title': 'Flow Circuit Algorithm', 'show_title': True,
+    {'title': 'Flow Circuit Algorithm', 'show_title': False,
      'font': 'Arial 10', 'size_label': 'm', 'size_unit': 's',
-     'widget_dicts': [anode_label, cathode_label, cooling_label,
+     'widget_dicts': [flow_numerical_settings_label,
+                      anode_label, cathode_label, cooling_label,
                       convergence_criteria_flow,
                       min_iter_flow,
                       max_iter_flow,
-                      underrelaxation_factor_flow],
+                      underrelaxation_factor_flow,
+                      empty_row],
      'sticky': 'WEN'}
 # , 'highlightbackground': 'grey', 'highlightthickness': 1}
 
@@ -112,12 +122,18 @@ delta_i = \
      'sim_name': [['anode', 'delta_i'], ['cathode', 'delta_i']],
      'dtype': 'float', 'dimensions': 'A/m²', 'type': 'EntrySet'}
 
+current_linearization_label = \
+    {'label': 'Limiting Current Linearization',
+     'font': 'Arial 10 bold', 'type': 'Label', 'sticky': 'WNS'}
+
 current_linearization_frame_dict = \
-    {'title': 'Limiting Current Linearization', 'show_title': True,
+    {'title': 'Limiting Current Linearization', 'show_title': False,
      'font': 'Arial 10', 'size_label': 'l', 'size_unit': 'm',
-     'widget_dicts': [anode_label, cathode_label,
+     'widget_dicts': [current_linearization_label,
+                      anode_label, cathode_label,
                       c_eps,
-                      delta_i],
+                      delta_i,
+                      empty_row],
      'sticky': 'WEN'}
 # , 'highlightbackground': 'grey', 'highlightthickness': 1}
 
@@ -127,7 +143,8 @@ numerical_settings_frame_dict = \
      'sub_frame_dicts': [main_numerical_settings_frame_dict,
                          flow_numerical_settings_frame_dict,
                          current_linearization_frame_dict],
-     'sticky': 'WEN', 'highlightbackground': 'grey', 'highlightthickness': 1}
+     # 'sticky': 'WEN', 'highlightbackground': 'grey', 'highlightthickness': 1
+     }
 
 calc_temperature = \
     {'label': 'Calculate Temperature Distribution:', 'value': True,
@@ -187,7 +204,8 @@ physics_switch_frame_dict = \
      'font': 'Arial 10 bold',
      'sub_frame_dicts': [main_physics_switch_frame_dict,
                          electrode_loss_switch_frame_dict],
-     'sticky': 'WEN', 'highlightbackground': 'grey', 'highlightthickness': 1}
+     # 'sticky': 'WEN', 'highlightbackground': 'grey', 'highlightthickness': 1
+     }
 
 load_settings_button_dict = \
     {'label': 'Load Settings', 'takefocus': 0, 'row': 0, 'column': 0,

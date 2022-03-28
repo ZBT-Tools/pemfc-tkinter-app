@@ -48,7 +48,7 @@ empty_row = {'label': ' ',  'font': 'Arial 1',  # 'row': 1, 'column': 1,
              'type': 'Label', 'sticky': 'WENS'}
 
 cell_frame_sub_dict = \
-    {'title': 'Cell Lengths', 'show_title': False,
+    {'title': 'Cell Lengths', 'show_title': True,
      'grid_location': (1, 0), 'font': 'Arial 10 bold',
      'widget_dicts': [cell_number, cell_length,
                       cell_width,
@@ -208,7 +208,7 @@ channel_frame_dict = \
                       channel_bends,
                       bend_pressure_loss_coefficient,
                       channel_flow_direction],
-     'highlightbackground': 'grey', 'highlightthickness': 1,
+     # 'highlightbackground': 'grey', 'highlightthickness': 1,
      'size_label': 'l', 'size_unit': 's', 'sticky': 'WENS'}
 
 cell_frame_dict = \
