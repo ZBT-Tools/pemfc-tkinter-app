@@ -1,4 +1,4 @@
-# PEMFC-Dash-App
+# PEMFC-GUI-App
 Web-interface for the PEMFC-Model core module
 ([github.com/zbt-tools/pemfc-core](https://github.com/zbt-tools/pemfc-core))
 
