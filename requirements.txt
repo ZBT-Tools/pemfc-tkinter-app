@@ -1,4 +1,4 @@
 matplotlib>=3.5.1
 numpy>=1.22.1
-pemfc @ git+https://github.com/ZBT-Tools/pemfc-core.git@master
 scipy>=1.7.3
+pemfc @ git+https://github.com/ZBT-Tools/pemfc-core.git@master

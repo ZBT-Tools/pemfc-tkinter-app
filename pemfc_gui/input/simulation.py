@@ -227,6 +227,7 @@ output_dir_button_dict = \
     {'label': 'Open', 'type': 'OpenDirectoryButton', 'width': 10}
 output_dir = \
     {'label': 'Output Directory:', 'button_dict': output_dir_button_dict,
+     'value': 'output',
      'sim_name': ['output', 'directory'], 'width': 40,
      'dtype': 'string', 'type': 'EntryButtonSet'}
 

@@ -1,9 +1,9 @@
 name: gui_app
 dependencies:
-        - python>=3.9.7
-        - pip
+        - python>=3.10
         - numpy
         - scipy
         - matplotlib
+        - pip
         - pip:
                 - git+https://github.com/ZBT-Tools/pemfc-core.git@master#egg=pemfc

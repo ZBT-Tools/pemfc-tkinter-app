@@ -3,7 +3,7 @@ from abc import ABC
 import copy
 
 # local imports
-from pemfc import global_functions as gf
+from pemfc.src import global_functions as gf
 
 
 class Base(ABC):
