@@ -5,8 +5,9 @@ import os
 import sys
 import json
 
+import pemfc
 from pemfc import main_app
-from pemfc.data import input_dicts
+# from pemfc.data import input_dicts
 
 # local imports
 from pemfc_gui import frame
@@ -92,12 +93,13 @@ class NotebookApp:
 
     def get_settings(self):
         values = self.get_values()
-
-        input_dicts.sim_dict['output']['save_plot'] = True
-        input_dicts.sim_dict['output']['save_csv'] = True
-
+        base_dir = os.path.dirname(pemfc.__file__)
+        with open(os.path.join(base_dir, 'settings', 'settings.json')) as file:
+            settings = json.load(file)
+        settings['output']['save_plot'] = True
+        settings['output']['save_csv'] = True
         settings, name_lists = \
-            data_transfer.gui_to_sim_transfer(values, input_dicts.sim_dict)
+            data_transfer.gui_to_sim_transfer(values, settings)
         return settings
 
     def save_settings(self):
@@ -116,11 +118,11 @@ class NotebookApp:
             widgets_registry = self.get_values(get_object=True)
             data_transfer.sim_to_gui_transfer(settings_dict, widgets_registry)
             self.call_commands()
-            input_dicts.sim_dict.update(settings_dict)
+            # input_dicts.sim_dict.update(settings_dict)
 
     def run(self):
         settings = self.get_settings()
-        main_app.main()
+        main_app.main(settings=settings)
 
 
 def resource_path(relative_path):
