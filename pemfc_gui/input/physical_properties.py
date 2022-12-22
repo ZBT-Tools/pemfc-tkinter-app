@@ -16,29 +16,29 @@ through_plane_label_2 = {'label': 'tp', 'row': 2, 'column': 4, 'pady': 0,
 electrical_conductivity_bpp = \
     {'label': 'BPP Electrical Conductivity:',
      'number': 4, 'value': 6e4, 'width': 5,
-     'sim_name': [['anode', 'electrical_conductivity_bpp', [0, 1]],
-                  ['cathode', 'electrical_conductivity_bpp', [2, 3]]],
+     'sim_name': [['anode', 'bpp', 'electrical_conductivity', [0, 1]],
+                  ['cathode', 'bpp', 'electrical_conductivity', [2, 3]]],
      'dtype': 'float', 'dimensions': 'S/m', 'type': 'EntrySet'}
 
 electrical_conductivity_gde = \
     {'label': 'GDE Electrical Conductivity:',
      'number': 4, 'value': 500.0, 'width': 5,
-     'sim_name': [['anode', 'electrical_conductivity_gde', [0, 1]],
-                  ['cathode', 'electrical_conductivity_gde', [2, 3]]],
+     'sim_name': [['anode', 'gde', 'electrical_conductivity', [0, 1]],
+                  ['cathode', 'gde', 'electrical_conductivity', [2, 3]]],
      'dtype': 'float', 'dimensions': 'S/m', 'type': 'EntrySet'}
 
 thermal_conductivity_bpp = \
     {'label': 'BPP Thermal Conductivity:',
      'value': [[100.0, 100.0], [100.0, 100.0]], 'width': 5,
-     'sim_name': [['anode', 'thermal_conductivity_bpp', [0, 1]],
-                  ['cathode', 'thermal_conductivity_bpp', [2, 3]]],
+     'sim_name': [['anode', 'bpp', 'thermal_conductivity', [0, 1]],
+                  ['cathode', 'bpp' 'thermal_conductivity', [2, 3]]],
      'dtype': 'float', 'dimensions': 'W/(m K)', 'type': 'EntrySet'}
 
 thermal_conductivity_gde = \
     {'label': 'GDE Thermal Conductivity:',
      'value': [[1.0, 1.0], [1.0, 1.0]], 'width': 5,
-     'sim_name': [['anode', 'thermal_conductivity_gde', [0, 1]],
-                  ['cathode', 'thermal_conductivity_gde', [2, 3]]],
+     'sim_name': [['anode', 'gde', 'thermal_conductivity', [0, 1]],
+                  ['cathode', 'gde', 'thermal_conductivity', [2, 3]]],
      'dtype': 'float', 'dimensions': 'W/(m K)', 'type': 'EntrySet'}
 
 # empty_row = {'label': ' ',  'font': 'Arial 1',  # 'row': 1, 'column': 1,
