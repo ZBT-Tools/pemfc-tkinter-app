@@ -47,7 +47,7 @@ thermal_conductivity_gde = \
 porosity_gdl = \
     {'label': 'GDL Porosity:', 'number': 2, 'value': 0.8,
      'width': 11, 'columnspan': [1, 2, 2, 1],
-     'sim_name': [['anode', 'porosity_gdl'], ['cathode', 'porosity_gdl']],
+     'sim_name': [['anode', 'gde', 'porosity'], ['cathode', 'gde', 'porosity']],
      'dtype': 'float', 'dimensions': '-', 'type': 'EntrySet'}
 porosity_cl = \
     {'label': 'Catalyst Porosity:', 'number': 2, 'value': 0.5,
