@@ -31,7 +31,7 @@ thickness_bpp = \
      'dtype': 'float', 'dimensions': 'm', 'type': 'EntrySet'}
 thickness_gdl = \
     {'label': 'GDL Thickness:', 'number': 2, 'value': 2e-4,
-     'sim_name': [['anode', 'gdl', 'thickness_gdl'], ['cathode', 'gdl', 'thickness']],
+     'sim_name': [['anode', 'gdl', 'thickness'], ['cathode', 'gdl', 'thickness']],
      'dtype': 'float', 'dimensions': 'm', 'type': 'EntrySet'}
 thickness_cl = \
     {'label': 'Catalyst Thickness:', 'number': 2, 'value': 1e-5,
