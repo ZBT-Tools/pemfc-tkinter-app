@@ -1,6 +1,7 @@
 from pemfc.src import global_functions as gf
 
 from pemfc_gui.entry_value import EntryValue
+import copy
 
 
 def gen_dict_extract(key, var):
@@ -21,14 +22,35 @@ def gen_dict_extract(key, var):
                 yield result
 
 
-def set_dict_entry(value, name_list, target_dict):
+def set_dict_entry(value, name_list, target_dict, mode="moderate"):
+    """
+
+    Parameters
+    ----------
+    mode:       "moderate" (default), allows function to add keys to target_dict, "strict": Raises error, if
+                key is not available
+    value
+    name_list
+    target_dict
+
+    Returns
+    -------
+
+    """
     if isinstance(target_dict, dict):
         sub_dict = target_dict
     else:
         raise TypeError
     for i in range(len(name_list) - 1):
         sub_dict = sub_dict[name_list[i]]
-    sub_dict[name_list[-1]] = EntryValue.get_value(value)
+
+    if mode == "strict":
+        if name_list[-1] in sub_dict:
+            sub_dict[name_list[-1]] = EntryValue.get_value(value)
+        else:
+            raise NameError(f'Key {name_list} was not found in settings.json')
+    else:
+        sub_dict[name_list[-1]] = EntryValue.get_value(value)
     return target_dict
 
 
@@ -43,6 +65,17 @@ def get_dict_entry(name_list, source_dict):
 
 
 def gui_to_sim_transfer(source_dict, target_dict):
+    """
+
+    Parameters
+    ----------
+    source_dict
+    target_dict
+
+    Returns
+    -------
+
+    """
 
     # get only widgets with sim_names
     name_lists = []
@@ -88,12 +121,11 @@ def gui_to_sim_transfer(source_dict, target_dict):
                 name_lists.append(sim_names)
                 if 'value' in gui_entry:
                     sub_dict = \
-                        set_dict_entry(gui_entry['value'], sim_names, sub_dict)
+                        set_dict_entry(gui_entry['value'], sim_names, sub_dict, mode="strict")
     return target_dict, name_lists
 
 
 def sim_to_gui_transfer(source_dict, target_dict):
-
     # get list of widgets only with sim_names
     extracted_gui_entries = list(gen_dict_extract('sim_name', target_dict))
     if extracted_gui_entries:
