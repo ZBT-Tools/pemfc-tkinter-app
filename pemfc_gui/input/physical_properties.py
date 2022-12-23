@@ -182,32 +182,32 @@ cathode_label_2 = {'label': 'Cathode', 'row': 1, 'column': 2,
 exchange_current_density = \
     {'label': 'Exchange Current Density:', 'value': [5.0e8, 8.0e5],
      #'width': 11, 'columnspan': [1, 2, 2, 1],
-     'sim_name': [['anode', 'vol_ex_cd'], ['cathode', 'vol_ex_cd']],
+     'sim_name': [['anode', 'electrochemistry', 'vol_ex_cd'], ['cathode', 'electrochemistry',  'vol_ex_cd']],
      'dtype': 'float', 'dimensions': 'A/m³', 'type': 'EntrySet'}
 
 reactant_gdl_diffusion_coefficient = \
     {'label': 'Effective GDL Diffusion Coefficient:', 'value': [10e-6, 6e-6],
      #'width': 11, 'columnspan': [1, 2, 2, 1],
-     'sim_name': [['anode', 'diff_coeff_gdl'], ['cathode', 'diff_coeff_gdl']],
+     'sim_name': [['anode', 'electrochemistry',  'diff_coeff_gdl'], ['cathode', 'electrochemistry',  'diff_coeff_gdl']],
      'dtype': 'float', 'dimensions': 'm²/s', 'type': 'EntrySet'}
 
 reactant_catalyst_diffusion_coefficient = \
     {'label': 'Effective Catalyst Diffusion Coefficient:',
      'value': [1e-7, 1e-7],
      #'width': 11, 'columnspan': [1, 2, 2, 1],
-     'sim_name': [['anode', 'diff_coeff_cl'], ['cathode', 'diff_coeff_cl']],
+     'sim_name': [['anode',  'electrochemistry', 'diff_coeff_cl'], ['cathode', 'electrochemistry',  'diff_coeff_cl']],
      'dtype': 'float', 'dimensions': 'm²/s', 'type': 'EntrySet'}
 
 catalyst_proton_conductivity = \
     {'label': 'Effective Catalyst Proton Conductivity:', 'value': [1.5, 1.5],
      # 'width': 11, 'columnspan': [1, 2, 2, 1],
-     'sim_name': [['anode', 'prot_con_cl'], ['cathode', 'prot_con_cl']],
+     'sim_name': [['anode', 'electrochemistry', 'prot_con_cl'], ['cathode', 'electrochemistry', 'prot_con_cl']],
      'dtype': 'float', 'dimensions': '1/(Ohm-m)', 'type': 'EntrySet'}
 
 tafel_slope = \
     {'label': 'Tafel Slope:', 'value': [0.035, 0.035],
      # 'width': 11, 'columnspan': [1, 2, 2, 1],
-     'sim_name': [['anode', 'tafel_slope'], ['cathode', 'tafel_slope']],
+     'sim_name': [['anode', 'electrochemistry','tafel_slope'], ['cathode','electrochemistry', 'tafel_slope']],
      'dtype': 'float', 'dimensions': 'V', 'type': 'EntrySet'}
 
 open_circuit_voltage = \
