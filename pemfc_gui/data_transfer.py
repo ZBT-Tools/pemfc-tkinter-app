@@ -1,7 +1,5 @@
 from pemfc.src import global_functions as gf
-
 from pemfc_gui.entry_value import EntryValue
-import copy
 
 
 def gen_dict_extract(key, var):
@@ -124,7 +122,7 @@ def gui_to_sim_transfer(source_dict, target_dict):
                 name_lists.append(sim_names)
                 if 'value' in gui_entry:
                     sub_dict = \
-                        set_dict_entry(gui_entry['value'], sim_names, sub_dict, mode="moderate") #ToDo set to strict
+                        set_dict_entry(gui_entry['value'], sim_names, sub_dict, mode="strict")
     return target_dict, name_lists
 
 
