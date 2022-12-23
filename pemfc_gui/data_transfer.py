@@ -1,5 +1,6 @@
 from pemfc.src import global_functions as gf
 from pemfc_gui.entry_value import EntryValue
+import copy
 
 
 def gen_dict_extract(key, var):
@@ -76,6 +77,7 @@ def gui_to_sim_transfer(source_dict, target_dict):
     -------
 
     """
+    tdict = copy.deepcopy(target_dict)
 
     # get only widgets with sim_names
     name_lists = []
@@ -84,7 +86,7 @@ def gui_to_sim_transfer(source_dict, target_dict):
         for gui_entry in extracted_gui_entries:
             sim_names = gui_entry['sim_name']
             sim_names = gf.ensure_list(sim_names)
-            sub_dict = target_dict
+            sub_dict = tdict
 
             if isinstance(sim_names[0], list):
                 gui_values = gf.ensure_list(gui_entry['value'])
@@ -122,7 +124,7 @@ def gui_to_sim_transfer(source_dict, target_dict):
                 if 'value' in gui_entry:
                     sub_dict = \
                         set_dict_entry(gui_entry['value'], sim_names, sub_dict, mode="strict")
-    return target_dict, name_lists
+    return tdict, name_lists
 
 
 def sim_to_gui_transfer(source_dict, target_dict):
