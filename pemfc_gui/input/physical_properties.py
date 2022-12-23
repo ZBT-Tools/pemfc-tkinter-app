@@ -45,15 +45,17 @@ thermal_conductivity_gde = \
 #              'type': 'Label', 'sticky': 'WENS'}
 
 porosity_gdl = \
-    {'label': 'GDL Porosity:', 'number': 2, 'value': 0.8,
+    {'label': 'GDL & CL Porosity:', 'number': 2, 'value': 0.8,
      'width': 11, 'columnspan': [1, 2, 2, 1],
      'sim_name': [['anode', 'gde', 'porosity'], ['cathode', 'gde', 'porosity']],
      'dtype': 'float', 'dimensions': '-', 'type': 'EntrySet'}
-porosity_cl = \
-    {'label': 'Catalyst Porosity:', 'number': 2, 'value': 0.5,
-     'width': 11, 'columnspan': [1, 2, 2, 1],
-     'sim_name': [['anode', 'porosity_cl'], ['cathode', 'porosity_cl']],
-     'dtype': 'float', 'dimensions': '-', 'type': 'EntrySet'}
+
+# ToDo: Rework handling of gdl&cl porosities. Current implementation of pemfc uses only single porosity for gde
+# porosity_cl = \
+#     {'label': 'Catalyst Porosity:', 'number': 2, 'value': 0.5,
+#      'width': 11, 'columnspan': [1, 2, 2, 1],
+#      'sim_name': [['anode', 'porosity_cl'], ['cathode', 'porosity_cl']],
+#      'dtype': 'float', 'dimensions': '-', 'type': 'EntrySet'}
 
 porous_frame_dict = \
     {'title': 'Porous Layers', 'show_title': True,
