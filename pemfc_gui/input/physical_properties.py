@@ -44,7 +44,7 @@ thermal_conductivity_gde = \
 # empty_row = {'label': ' ',  'font': 'Arial 1',  # 'row': 1, 'column': 1,
 #              'type': 'Label', 'sticky': 'WENS'}
 
-porosity_gdl = \
+porosity_gde = \
     {'label': 'GDL & CL Porosity:', 'number': 2, 'value': 0.8,
      'width': 11, 'columnspan': [1, 2, 2, 1],
      'sim_name': [['anode', 'gde', 'porosity'], ['cathode', 'gde', 'porosity']],
@@ -70,7 +70,9 @@ porous_frame_dict = \
                       thermal_conductivity_bpp,
                       thermal_conductivity_gde,
                       # empty_row,
-                      porosity_gdl, porosity_cl]}
+                      porosity_gde,
+                      #porosity_cl
+                      ]}
      #'highlightbackground': 'grey', 'highlightthickness': 1}
 
 
