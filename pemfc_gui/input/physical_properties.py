@@ -31,7 +31,7 @@ thermal_conductivity_bpp = \
     {'label': 'BPP Thermal Conductivity:',
      'value': [[100.0, 100.0], [100.0, 100.0]], 'width': 5,
      'sim_name': [['anode', 'bpp', 'thermal_conductivity', [0, 1]],
-                  ['cathode', 'bpp' 'thermal_conductivity', [2, 3]]],
+                  ['cathode', 'bpp', 'thermal_conductivity', [2, 3]]],
      'dtype': 'float', 'dimensions': 'W/(m K)', 'type': 'EntrySet'}
 
 thermal_conductivity_gde = \
