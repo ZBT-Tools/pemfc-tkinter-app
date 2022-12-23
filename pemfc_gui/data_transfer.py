@@ -35,18 +35,17 @@ def set_dict_entry(value, name_list, target_dict, mode="moderate"):
     -------
 
     """
-    flag_found = False
     if isinstance(target_dict, dict):
         sub_dict = target_dict
     else:
         raise TypeError
     for i in range(len(name_list) - 1):
         sub_dict = sub_dict[name_list[i]]
-        if name_list[-1] in sub_dict:
-            sub_dict[name_list[-1]] = EntryValue.get_value(value)
-            flag_found = True
 
-    if not flag_found:
+    if name_list[-1] in sub_dict:
+        sub_dict[name_list[-1]] = EntryValue.get_value(value)
+        flag_found = True
+    else:
         if mode == "strict":
             raise NameError(f'Key {name_list} was not found in settings.json')
         else:
