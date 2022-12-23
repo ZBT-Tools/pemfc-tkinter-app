@@ -44,13 +44,14 @@ def set_dict_entry(value, name_list, target_dict, mode="moderate"):
     for i in range(len(name_list) - 1):
         sub_dict = sub_dict[name_list[i]]
 
-    if mode == "strict":
         if name_list[-1] in sub_dict:
             sub_dict[name_list[-1]] = EntryValue.get_value(value)
         else:
-            raise NameError(f'Key {name_list} was not found in settings.json')
-    else:
-        sub_dict[name_list[-1]] = EntryValue.get_value(value)
+            if mode == "strict":
+                raise NameError(f'Key {name_list} was not found in settings.json')
+            else:
+                print(f'Key {name_list} was not found in settings.json')
+
     return target_dict
 
 
@@ -121,7 +122,7 @@ def gui_to_sim_transfer(source_dict, target_dict):
                 name_lists.append(sim_names)
                 if 'value' in gui_entry:
                     sub_dict = \
-                        set_dict_entry(gui_entry['value'], sim_names, sub_dict, mode="strict")
+                        set_dict_entry(gui_entry['value'], sim_names, sub_dict, mode="moderate") #ToDo set to strict
     return target_dict, name_lists
 
 
