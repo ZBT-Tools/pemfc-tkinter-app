@@ -16,44 +16,46 @@ through_plane_label_2 = {'label': 'tp', 'row': 2, 'column': 4, 'pady': 0,
 electrical_conductivity_bpp = \
     {'label': 'BPP Electrical Conductivity:',
      'number': 4, 'value': 6e4, 'width': 5,
-     'sim_name': [['anode', 'electrical_conductivity_bpp', [0, 1]],
-                  ['cathode', 'electrical_conductivity_bpp', [2, 3]]],
+     'sim_name': [['anode', 'bpp', 'electrical_conductivity', [0, 1]],
+                  ['cathode', 'bpp', 'electrical_conductivity', [2, 3]]],
      'dtype': 'float', 'dimensions': 'S/m', 'type': 'EntrySet'}
 
 electrical_conductivity_gde = \
     {'label': 'GDE Electrical Conductivity:',
      'number': 4, 'value': 500.0, 'width': 5,
-     'sim_name': [['anode', 'electrical_conductivity_gde', [0, 1]],
-                  ['cathode', 'electrical_conductivity_gde', [2, 3]]],
+     'sim_name': [['anode', 'gde', 'electrical_conductivity', [0, 1]],
+                  ['cathode', 'gde', 'electrical_conductivity', [2, 3]]],
      'dtype': 'float', 'dimensions': 'S/m', 'type': 'EntrySet'}
 
 thermal_conductivity_bpp = \
     {'label': 'BPP Thermal Conductivity:',
      'value': [[100.0, 100.0], [100.0, 100.0]], 'width': 5,
-     'sim_name': [['anode', 'thermal_conductivity_bpp', [0, 1]],
-                  ['cathode', 'thermal_conductivity_bpp', [2, 3]]],
+     'sim_name': [['anode', 'bpp', 'thermal_conductivity', [0, 1]],
+                  ['cathode', 'bpp', 'thermal_conductivity', [2, 3]]],
      'dtype': 'float', 'dimensions': 'W/(m K)', 'type': 'EntrySet'}
 
 thermal_conductivity_gde = \
     {'label': 'GDE Thermal Conductivity:',
      'value': [[1.0, 1.0], [1.0, 1.0]], 'width': 5,
-     'sim_name': [['anode', 'thermal_conductivity_gde', [0, 1]],
-                  ['cathode', 'thermal_conductivity_gde', [2, 3]]],
+     'sim_name': [['anode', 'gde', 'thermal_conductivity', [0, 1]],
+                  ['cathode', 'gde', 'thermal_conductivity', [2, 3]]],
      'dtype': 'float', 'dimensions': 'W/(m K)', 'type': 'EntrySet'}
 
 # empty_row = {'label': ' ',  'font': 'Arial 1',  # 'row': 1, 'column': 1,
 #              'type': 'Label', 'sticky': 'WENS'}
 
-porosity_gdl = \
-    {'label': 'GDL Porosity:', 'number': 2, 'value': 0.8,
+porosity_gde = \
+    {'label': 'GDL & CL Porosity:', 'number': 2, 'value': 0.8,
      'width': 11, 'columnspan': [1, 2, 2, 1],
-     'sim_name': [['anode', 'porosity_gdl'], ['cathode', 'porosity_gdl']],
+     'sim_name': [['anode', 'gde', 'porosity'], ['cathode', 'gde', 'porosity']],
      'dtype': 'float', 'dimensions': '-', 'type': 'EntrySet'}
-porosity_cl = \
-    {'label': 'Catalyst Porosity:', 'number': 2, 'value': 0.5,
-     'width': 11, 'columnspan': [1, 2, 2, 1],
-     'sim_name': [['anode', 'porosity_cl'], ['cathode', 'porosity_cl']],
-     'dtype': 'float', 'dimensions': '-', 'type': 'EntrySet'}
+
+# ToDo: Rework handling of gdl&cl porosities. Current implementation of pemfc uses only single porosity for gde
+# porosity_cl = \
+#     {'label': 'Catalyst Porosity:', 'number': 2, 'value': 0.5,
+#      'width': 11, 'columnspan': [1, 2, 2, 1],
+#      'sim_name': [['anode', 'porosity_cl'], ['cathode', 'porosity_cl']],
+#      'dtype': 'float', 'dimensions': '-', 'type': 'EntrySet'}
 
 porous_frame_dict = \
     {'title': 'Porous Layers', 'show_title': True,
@@ -68,7 +70,9 @@ porous_frame_dict = \
                       thermal_conductivity_bpp,
                       thermal_conductivity_gde,
                       # empty_row,
-                      porosity_gdl, porosity_cl]}
+                      porosity_gde,
+                      #porosity_cl
+                      ]}
      #'highlightbackground': 'grey', 'highlightthickness': 1}
 
 
@@ -178,32 +182,32 @@ cathode_label_2 = {'label': 'Cathode', 'row': 1, 'column': 2,
 exchange_current_density = \
     {'label': 'Exchange Current Density:', 'value': [5.0e8, 8.0e5],
      #'width': 11, 'columnspan': [1, 2, 2, 1],
-     'sim_name': [['anode', 'vol_ex_cd'], ['cathode', 'vol_ex_cd']],
+     'sim_name': [['anode', 'electrochemistry', 'vol_ex_cd'], ['cathode', 'electrochemistry',  'vol_ex_cd']],
      'dtype': 'float', 'dimensions': 'A/m³', 'type': 'EntrySet'}
 
 reactant_gdl_diffusion_coefficient = \
     {'label': 'Effective GDL Diffusion Coefficient:', 'value': [10e-6, 6e-6],
      #'width': 11, 'columnspan': [1, 2, 2, 1],
-     'sim_name': [['anode', 'diff_coeff_gdl'], ['cathode', 'diff_coeff_gdl']],
+     'sim_name': [['anode', 'electrochemistry',  'diff_coeff_gdl'], ['cathode', 'electrochemistry',  'diff_coeff_gdl']],
      'dtype': 'float', 'dimensions': 'm²/s', 'type': 'EntrySet'}
 
 reactant_catalyst_diffusion_coefficient = \
     {'label': 'Effective Catalyst Diffusion Coefficient:',
      'value': [1e-7, 1e-7],
      #'width': 11, 'columnspan': [1, 2, 2, 1],
-     'sim_name': [['anode', 'diff_coeff_cl'], ['cathode', 'diff_coeff_cl']],
+     'sim_name': [['anode',  'electrochemistry', 'diff_coeff_cl'], ['cathode', 'electrochemistry',  'diff_coeff_cl']],
      'dtype': 'float', 'dimensions': 'm²/s', 'type': 'EntrySet'}
 
 catalyst_proton_conductivity = \
     {'label': 'Effective Catalyst Proton Conductivity:', 'value': [1.5, 1.5],
      # 'width': 11, 'columnspan': [1, 2, 2, 1],
-     'sim_name': [['anode', 'prot_con_cl'], ['cathode', 'prot_con_cl']],
+     'sim_name': [['anode', 'electrochemistry', 'prot_con_cl'], ['cathode', 'electrochemistry', 'prot_con_cl']],
      'dtype': 'float', 'dimensions': '1/(Ohm-m)', 'type': 'EntrySet'}
 
 tafel_slope = \
     {'label': 'Tafel Slope:', 'value': [0.035, 0.035],
      # 'width': 11, 'columnspan': [1, 2, 2, 1],
-     'sim_name': [['anode', 'tafel_slope'], ['cathode', 'tafel_slope']],
+     'sim_name': [['anode', 'electrochemistry','tafel_slope'], ['cathode','electrochemistry', 'tafel_slope']],
      'dtype': 'float', 'dimensions': 'V', 'type': 'EntrySet'}
 
 open_circuit_voltage = \

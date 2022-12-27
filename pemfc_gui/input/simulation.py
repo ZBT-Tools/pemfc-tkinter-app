@@ -1,4 +1,4 @@
-empty_row = {'label': ' ',  'font': 'Arial 1',  # 'row': 1, 'column': 1,
+empty_row = {'label': ' ', 'font': 'Arial 1',  # 'row': 1, 'column': 1,
              'type': 'Label', 'sticky': 'WENS'}
 
 channel_discretization = \
@@ -22,7 +22,7 @@ maximum_iteration = \
 
 underrelaxation_factor = \
     {'label': 'Under-relaxation Factor:', 'value': 0.5,
-     'sim_name': ['cell', 'underrelaxation_factor'], 'dtype': 'float',
+     'sim_name': ['simulation', 'underrelaxation_factor'], 'dtype': 'float',
      'dimensions': '-', 'type': 'EntrySet'}
 
 main_numerical_settings_label = \
@@ -114,12 +114,12 @@ flow_numerical_settings_frame_dict = \
 
 c_eps = \
     {'label': 'Critical Concentration Value:', 'value': [0.02, 0.02],
-     'sim_name': [['anode', 'c_eps'], ['cathode', 'c_eps']],
+     'sim_name': [['anode', 'electrochemistry', 'c_eps'], ['cathode', 'electrochemistry', 'c_eps']],
      'dtype': 'float', 'dimensions': 'mol/m³', 'type': 'EntrySet'}
 
 delta_i = \
     {'label': 'Numerical Current Density Difference:', 'value': [5.0, 5.0],
-     'sim_name': [['anode', 'delta_i'], ['cathode', 'delta_i']],
+     'sim_name': [['anode', 'electrochemistry', 'delta_i'], ['cathode', 'electrochemistry', 'delta_i']],
      'dtype': 'float', 'dimensions': 'A/m²', 'type': 'EntrySet'}
 
 current_linearization_label = \
@@ -173,20 +173,20 @@ main_physics_switch_frame_dict = \
 
 calc_act_loss = \
     {'label': 'Calculate Activation Loss:', 'value': [True, True],
-     'sim_name': [['anode', 'calc_act_loss'],
-                  ['cathode', 'calc_act_loss']],
+     'sim_name': [['anode', "electrochemistry",'calc_act_loss'],
+                  ['cathode',"electrochemistry", 'calc_act_loss']],
      'dtype': 'bool', 'type': 'CheckButtonSet'}
 
 calc_cl_diff_loss = \
     {'label': 'Calculate Catalyst Diffusion Loss:', 'value': [True, True],
-     'sim_name': [['anode', 'calc_cl_diff_loss'],
-                  ['cathode', 'calc_cl_diff_loss']],
+     'sim_name': [['anode',"electrochemistry", 'calc_cl_diff_loss'],
+                  ['cathode', "electrochemistry",'calc_cl_diff_loss']],
      'dtype': 'bool', 'type': 'CheckButtonSet'}
 
 calc_gdl_diff_loss = \
     {'label': 'Calculate Catalyst Diffusion Loss:', 'value': [True, True],
-     'sim_name': [['anode', 'calc_gdl_diff_loss'],
-                  ['cathode', 'calc_gdl_diff_loss']],
+     'sim_name': [['anode',"electrochemistry", 'calc_gdl_diff_loss'],
+                  ['cathode',"electrochemistry", 'calc_gdl_diff_loss']],
      'dtype': 'bool', 'type': 'CheckButtonSet'}
 
 electrode_loss_switch_frame_dict = \
@@ -197,7 +197,7 @@ electrode_loss_switch_frame_dict = \
                       calc_cl_diff_loss,
                       calc_gdl_diff_loss],
      'sticky': 'WEN'}
-     # , 'highlightbackground': 'grey', 'highlightthickness': 1}
+# , 'highlightbackground': 'grey', 'highlightthickness': 1}
 
 physics_switch_frame_dict = \
     {'title': 'Physics Model Switches', 'show_title': True,
@@ -221,7 +221,7 @@ load_settings_frame_dict = \
      'widget_dicts': [load_settings_button_dict,
                       save_settings_button_dict],
      'sticky': 'WEN'}
-     # 'highlightbackground': 'grey', 'highlightthickness': 1}
+# 'highlightbackground': 'grey', 'highlightthickness': 1}
 
 output_dir_button_dict = \
     {'label': 'Open', 'type': 'OpenDirectoryButton', 'width': 10}
@@ -231,17 +231,16 @@ output_dir = \
      'sim_name': ['output', 'directory'], 'width': 40,
      'dtype': 'string', 'type': 'EntryButtonSet'}
 
-
 output_frame_dict = \
     {'title': 'Output Results', 'show_title': False, 'font': 'Arial 10 bold',
      'widget_dicts': [output_dir],
      'sticky': 'WENS'}
-     # 'highlightbackground': 'grey', 'highlightthickness': 1}
+# 'highlightbackground': 'grey', 'highlightthickness': 1}
 
 run_button_dict = {'label': 'Run Simulation', 'type': 'RunButton',
                    'columnspan': 3, 'width': 20, 'sticky': 'WNE'}
 
-empty_row = {'label': ' ',  'font': 'Arial 1',  'height': 100,
+empty_row = {'label': ' ', 'font': 'Arial 1', 'height': 100,
              'type': 'Label', 'sticky': 'WENS'}
 
 run_button_frame_dict = \
@@ -257,7 +256,7 @@ simulation_frame_dict = \
                          run_button_frame_dict],
      # 'widget_dicts': [cell_number, cell_length, cell_width],
      'sticky': 'WEN'}
-     # 'highlightbackground': 'grey', 'highlightthickness': 1}
+# 'highlightbackground': 'grey', 'highlightthickness': 1}
 
 
 tab_dict = \
