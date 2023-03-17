@@ -93,8 +93,9 @@ class NotebookApp:
 
     def get_settings(self):
         values = self.get_values()
-        base_dir = os.path.dirname(pemfc.__file__)
-        with open(os.path.join(base_dir, 'settings', 'settings.json')) as file:
+        pemfc_base_dir = os.path.dirname(pemfc.__file__)
+        with open(os.path.join(pemfc_base_dir, 'settings', 'settings.json')) \
+                as file:
             settings = json.load(file)
         settings['output']['save_plot'] = True
         settings['output']['save_csv'] = True
