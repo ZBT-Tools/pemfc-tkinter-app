@@ -1,6 +1,28 @@
-from pemfc.src import global_functions as gf
+# Module that allows data transfer between two dictionaries of different
+# layout, here specifically developed to transfer the input values from a
+# GUI saved in a dictionary to an input dictionary for a simulation
+
+import numpy as np
 from typing import Generator
 import copy
+
+
+def ensure_list(variable, length=1):
+    """
+    Ensures that the provided variable is a list, even if it contains only
+    one element.
+
+    :param variable: any type of variable, not manipulated if already list,
+        tuple, or numpy array
+    :param length: Length of repetitive entries in list of variable. Default
+        is 1
+    :return: List with length of parameter 'length' containing the provided
+        'variable', only modified if 'variable' not already iterable
+    """
+    if isinstance(variable, (list, tuple, np.ndarray)):
+        return variable
+    else:
+        return [variable for i in range(length)]
 
 
 def remove_key(key: str, var: (dict, list, tuple)) -> (dict, list, tuple):
@@ -189,11 +211,11 @@ def gui_to_sim_transfer(source_dict: dict, target_dict: dict,
     if extracted_gui_entries:
         for gui_entry in extracted_gui_entries:
             sim_names = gui_entry[sim_name_key]
-            sim_names = gf.ensure_list(sim_names)
+            sim_names = ensure_list(sim_names)
             sub_dict = target_dict_copy
 
             if isinstance(sim_names[0], list):
-                gui_values = gf.ensure_list(gui_entry[value_key])
+                gui_values = ensure_list(gui_entry[value_key])
 
                 # if len(sim_names) != len(gui_values):
                 #     gui_values = [gui_values[0] for i in range(len(sim_names))]
@@ -269,7 +291,7 @@ def sim_to_gui_transfer(source_dict: dict, target_dict: dict,
     the GUI widget. If the `sim_name_key` key is not found in`target_dict`,
     a `KeyError` is raised.
 
-    Note: This function uses the `gf.ensure_list` function to ensure that the
+    Note: This function uses the `ensure_list` function to ensure that the
     `sim_names` and `gui_values` variables are lists, even if they contain only
     one element.
     """
@@ -284,7 +306,7 @@ def sim_to_gui_transfer(source_dict: dict, target_dict: dict,
                                 "of type WidgetSet from the pemfc-tkinter-app")
 
             sim_names = gui_entry[sim_name_key]
-            sim_names = gf.ensure_list(sim_names)
+            sim_names = ensure_list(sim_names)
             sub_dict = target_dict
 
             if isinstance(sim_names[0], list):
