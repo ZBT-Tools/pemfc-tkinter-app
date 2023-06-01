@@ -101,6 +101,7 @@ class NotebookApp:
         settings['output']['save_csv'] = True
         settings, name_lists = \
             data_transfer.gui_to_sim_transfer(values, settings)
+            data_transfer.dict_transfer(values, settings)
         return settings
 
     def save_settings(self):
