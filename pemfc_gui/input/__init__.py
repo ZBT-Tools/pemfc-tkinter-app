@@ -4,9 +4,7 @@ from . import cell_settings
 from . import manifold_settings
 from . import physical_properties
 from . import operating_conditions
-import json
-import copy
-from .. import data_transfer
+
 
 main_frame_dicts = [cell_settings.tab_dict,
                     manifold_settings.tab_dict,

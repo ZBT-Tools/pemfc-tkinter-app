@@ -211,6 +211,7 @@ load_settings_button_dict = \
     {'label': 'Load Settings', 'takefocus': 0, 'row': 0, 'column': 0,
      'sticky': '', 'width': 20, 'weights': [1, 1],
      'type': 'OpenFileButton'}
+
 save_settings_button_dict = \
     {'label': 'Save Settings', 'takefocus': 0, 'row': 0, 'column': 1,
      'sticky': '', 'width': 20, 'weights': [1, 1],
@@ -225,6 +226,7 @@ load_settings_frame_dict = \
 
 output_dir_button_dict = \
     {'label': 'Open', 'type': 'OpenDirectoryButton', 'width': 10}
+
 output_dir = \
     {'label': 'Output Directory:', 'button_dict': output_dir_button_dict,
      'value': 'output',
@@ -257,7 +259,6 @@ simulation_frame_dict = \
      # 'widget_dicts': [cell_number, cell_length, cell_width],
      'sticky': 'WEN'}
 # 'highlightbackground': 'grey', 'highlightthickness': 1}
-
 
 tab_dict = \
     {'title': 'Simulation', 'show_title': False,

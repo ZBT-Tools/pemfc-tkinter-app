@@ -7,3 +7,4 @@ dependencies:
         - pip
         - pip:
                 - git+https://github.com/ZBT-Tools/pemfc-core.git@master#egg=pemfc
+                - git+https://github.com/ZBT-Tools/data-transfer.git@master#egg=data_transfer

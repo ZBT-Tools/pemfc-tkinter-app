@@ -12,7 +12,7 @@ from pemfc import main_app
 # local imports
 from pemfc_gui import frame
 from pemfc_gui import input
-from pemfc_gui import data_transfer
+import data_transfer
 
 
 class NotebookApp:
