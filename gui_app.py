@@ -100,7 +100,6 @@ class NotebookApp:
         settings['output']['save_plot'] = True
         settings['output']['save_csv'] = True
         settings, name_lists = \
-            data_transfer.gui_to_sim_transfer(values, settings)
             data_transfer.dict_transfer(values, settings)
         return settings
 
@@ -118,7 +117,7 @@ class NotebookApp:
         else:
             settings_dict = json.load(file_directory)
             widgets_registry = self.get_values(get_object=True)
-            data_transfer.sim_to_gui_transfer(settings_dict, widgets_registry)
+            data_transfer.dict_transfer(settings_dict, widgets_registry)
             self.call_commands()
             # input_dicts.sim_dict.update(settings_dict)
 

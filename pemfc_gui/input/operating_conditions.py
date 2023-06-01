@@ -97,7 +97,7 @@ gas_channel_outlet_pressure = \
      'dtype': 'float', 'dimensions': 'Pa', 'type': 'EntrySet'}
 
 gas_manifold_outlet_pressure = \
-    {'label': 'Gas Manifold Outlet Pressure:', 'number': 2, 'value': 101325.0,
+    {'label': 'Gas Outlet Pressure:', 'number': 2, 'value': 101325.0,
      'width': 11, 'columnspan': [1, 2, 2, 1],
      'sim_name': [['anode', 'flow_circuit', 'outlet_manifold', 'p_out'],
                   ['cathode', 'flow_circuit', 'outlet_manifold', 'p_out']],
@@ -116,7 +116,7 @@ gas_frame_dict = \
          relative_humidity,
          stoichiometry,
          gas_inlet_temperature,
-         gas_channel_outlet_pressure,
+         # gas_channel_outlet_pressure,
          gas_manifold_outlet_pressure],
      'size_label': 'l', 'size_unit': 's',
      # 'highlightbackground': 'grey', 'highlightthickness': 1
@@ -172,15 +172,14 @@ coolant_inlet_temperature = \
      'dtype': 'float', 'dimensions': 'K', 'type': 'EntrySet'}
 
 coolant_channel_outlet_pressure = \
-    {'label': 'Coolant Outlet Pressure:', 'number': 1, 'value': 101325.0,
-     'width': 11,  # 'columnspan': [1, 2, 2, 1],
+    {'label': 'Coolant Channel Outlet Pressure:', 'number': 1,
+     'value': 101325.0, 'width': 11,  # 'columnspan': [1, 2, 2, 1],
      'sim_name':
-         ['coolant_flow_circuit', 'outlet_manifold',
-          'cross_sectional_shape'],
+         ['coolant_channel', 'p_out'],
      'dtype': 'float', 'dimensions': 'Pa', 'type': 'EntrySet'}
 
 coolant_manifold_outlet_pressure = \
-    {'label': 'Coolant Manifold Outlet Pressure:', 'number': 1,
+    {'label': 'Coolant Outlet Pressure:', 'number': 1,
      'value': 101325.0, 'width': 11,  # 'columnspan': [1, 2, 2, 1],
      'sim_name': ['coolant_flow_circuit', 'outlet_manifold', 'p_out'],
      'dtype': 'float', 'dimensions': 'Pa', 'type': 'EntrySet'}
@@ -208,7 +207,7 @@ cooling_frame_dict = \
      'widget_dicts': [
          coolant_control_frame,
          coolant_inlet_temperature,
-         coolant_channel_outlet_pressure,
+         # coolant_channel_outlet_pressure,
          coolant_manifold_outlet_pressure,
          endplate_heat_flux,
          convection_coefficient_environment,
