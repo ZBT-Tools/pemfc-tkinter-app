@@ -79,12 +79,13 @@ porous_frame_dict = \
 membrane_model = \
     {'label': 'Membrane Model:', 'number': 1,
      'sim_name': ['membrane', 'type'],
-     'value': ['Constant', 'Springer', 'Linear'],
+     'value': ['Constant', 'Springer', 'YeWang2007', 'Linear'],
      'type': 'ComboboxSet', 'specifier': 'dropdown_activate',
      'command': {'function': 'show_connected_widgets',
-                 'args': [[[[[1, 0]], [[2, 0], [3, 0]]],
-                           [[[2, 0]], [[1, 0], [3, 0]]],
-                           [[[3, 0]], [[1, 0], [2, 0]]]]],
+                 'args': [[[[[1, 0]], [[2, 0], [3, 0], [4, 0]]],
+                           [[[2, 0]], [[1, 0], [3, 0], [4, 0]]],
+                           [[[3, 0]], [[1, 0], [2, 0], [4, 0]]],
+                           [[[4, 0]], [[1, 0], [2, 0], [3, 0]]]]],
                  }
      }
 
@@ -131,6 +132,11 @@ springer_frame = \
      'widget_dicts': [empty_row, empty_row], 'padx': 0, 'pady': 0,
      'sticky': 'WEN', 'columnspan': 2}
 
+yewang2007_frame = \
+    {'title': 'YeWang2007 Ionic Conductivity', 'specifier': 'visibility',
+     'widget_dicts': [empty_row, empty_row], 'padx': 0, 'pady': 0,
+     'sticky': 'WEN', 'columnspan': 2}
+
 membrane_model_frame_dict = \
     {'title': 'Membrane Model Settings', 'show_title': False,
      'font': 'Arial 10 bold', 'sticky': 'WEN', 'padx': 0, 'pady': 0,  #'row': 1,
@@ -139,6 +145,7 @@ membrane_model_frame_dict = \
                       membrane_model,
                       constant_frame,
                       springer_frame,
+                      yewang2007_frame,
                       linear_frame,
                       ]}
      # 'highlightbackground': 'grey', 'highlightthickness': 1}
