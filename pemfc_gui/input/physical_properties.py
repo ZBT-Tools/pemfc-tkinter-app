@@ -75,7 +75,6 @@ porous_frame_dict = \
                       ]}
      #'highlightbackground': 'grey', 'highlightthickness': 1}
 
-
 membrane_model = \
     {'label': 'Membrane Model:', 'number': 1,
      'sim_name': ['membrane', 'type'],

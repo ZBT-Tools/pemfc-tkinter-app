@@ -166,6 +166,7 @@ outlet_manifold_width = \
 
 inlet_manifold_junction_loss_model = \
     {'label': 'T-Junction Resistance Model:', 'number': 3,
+     'specifier': 'disabled_manifolds',
      'sim_name': [['anode', 'flow_circuit', 'inlet_manifold',
                    'junction_resistance_model',  'type'],
                   ['cathode', 'flow_circuit', 'inlet_manifold',
@@ -173,7 +174,8 @@ inlet_manifold_junction_loss_model = \
                   ['coolant_flow_circuit', 'inlet_manifold',
                    'junction_resistance_model',  'type'],],
      'value': ['Bassett', 'Idelchik', 'Rennels', 'Constant'],
-     'type': 'ComboboxSet', 'specifier': 'dropdown_activate',
+     'type': 'ComboboxSet',
+     # 'specifier': 'dropdown_activate',
      # 'command': {'function': 'show_connected_widgets',
      'command': {'function': 'set_status',
                  'args': [
@@ -219,6 +221,7 @@ inlet_branch_manifold_diameter_ratio = \
 
 outlet_manifold_junction_loss_model = \
     {'label': 'T-Junction Resistance Model:', 'number': 3,
+     'specifier': 'disabled_manifolds',
      'sim_name': [['anode', 'flow_circuit', 'outlet_manifold',
                    'junction_resistance_model',  'type'],
                   ['cathode', 'flow_circuit', 'outlet_manifold',
@@ -226,7 +229,8 @@ outlet_manifold_junction_loss_model = \
                   ['coolant_flow_circuit', 'outlet_manifold',
                    'junction_resistance_model',  'type'],],
      'value': ['Bassett', 'Idelchik', 'Rennels', 'Constant'],
-     'type': 'ComboboxSet', 'specifier': 'dropdown_activate',
+     'type': 'ComboboxSet',
+     # 'specifier': 'dropdown_activate',
      # 'command': {'function': 'show_connected_widgets',
      'command': {'function': 'set_status',
                  'args': [
